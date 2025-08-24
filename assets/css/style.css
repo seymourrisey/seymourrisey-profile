@@ -1,0 +1,281 @@
+/*
+|--------------------------------------------------------------------------
+| CSS Variables
+|--------------------------------------------------------------------------
+*/
+:root {
+  /* Colors */
+  --primary-color: #222;
+  --secondary-color: #555;
+  --bg-color: #fff;
+  --bg-light: #f7f7f7;
+  --border-color: #ddd;
+
+  /* Typography */
+  --font-family: 'Inter', sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
+
+  /* Spacing */
+  --space-sm: 10px;
+  --space-md: 15px;
+  --space-lg: 20px;
+  --space-xl: 40px;
+  --space-xxl: 50px;
+  --space-xxxl: 60px;
+  --space-xxxxl: 80px;
+
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Global Styles
+|--------------------------------------------------------------------------
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  background: var(--bg-color);
+  line-height: var(--line-height-base);
+  padding-top: 60px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Navbar
+|--------------------------------------------------------------------------
+*/
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  background: var(--bg-color);
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg);
+  padding-left: 5rem;
+  padding-right: 5rem;
+  z-index: 1000;
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
+}
+
+
+.scrolled .navbar {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.logo {
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Hero Section
+|--------------------------------------------------------------------------
+*/
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-xxxl) 0;
+  gap: var(--space-xl);
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text .intro {
+  font-size: var(--font-size-base) + 2px; /* Example using calc() */
+}
+
+.hero-text .name {
+  font-size: 42px;
+  font-weight: 700;
+  margin: var(--space-sm) 0;
+}
+
+.hero-text .desc {
+  margin-bottom: var(--space-md);
+}
+
+.hero-img img {
+  max-width: 250px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Projects Section
+|--------------------------------------------------------------------------
+*/
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: var(--space-xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px; /* Could be changed to var(--space-xl) */
+}
+
+
+.card {
+  background: var(--bg-color);
+  padding: var(--space-md);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--space-sm);
+}
+
+.card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.card .role {
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+
+
+.project-socials {
+  margin-top: 12px;
+}
+
+.project-socials a {
+  display: inline-flex;
+  align-items: center;      
+  gap: 8px;                 
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project-socials a span {
+  line-height: 1; 
+  position: relative;
+  top: -2px;       
+}
+
+.project-socials a img {
+  width: 23px;      
+  height: 23px;        
+  filter: invert(0);        
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.project-socials a:hover {
+  color: #444;
+  transform: translateY(-2px);
+}
+
+.project-socials a:hover img {
+  transform: scale(1.1);    
+  opacity: 0.7;             
+}
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Contact Section
+|--------------------------------------------------------------------------
+*/
+.contact {
+  margin: var(--space-xxxxl) auto;
+  text-align: center;
+}
+
+.contact-flex {
+  display: flex;
+  gap: var(--space-xxl);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials a img {
+  width: 28px;
+  margin-right: var(--space-md);
+  filter: invert(0);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contact-form input,
+.contact-form button {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+}
+
+.contact-form button {
+  background: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #444; /* Can also be a variable like --primary-color-hover */
+}
+
+/*
+|--------------------------------------------------------------------------
+| Footer
+|--------------------------------------------------------------------------
+*/
+.footer {
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--bg-light);
+  margin-top: var(--space-xxl);
+}
