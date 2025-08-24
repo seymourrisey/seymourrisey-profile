@@ -24,7 +24,7 @@ ScrollReveal().reveal('.contact-flex', {
   distance: '60px'
 });
 
-
+// Navbar
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector("header");
   if (window.scrollY > 10) {
